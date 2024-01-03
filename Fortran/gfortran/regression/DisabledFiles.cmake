@@ -77,7 +77,7 @@ file(GLOB UNSUPPORTED_FILES CONFIGURE_DEPENDS
   # f18 requires extension Cray pointee to be a sequence type if derived
   cray_pointers_11.f90
   # Unimplemented in extension: assumed-size Cray pointee
-  cray_pointers_6.f90
+#  cray_pointers_6.f90 # pmk: compile-only test, now passes
   # Unimplemented in extension: Cray pointer to function
   cray_pointers_9.f90
   # DEC "typed" bit intrinsics: BBTEST, BITEST, FLOATI, FLOATJ, BIEOR, &c.
@@ -85,13 +85,13 @@ file(GLOB UNSUPPORTED_FILES CONFIGURE_DEPENDS
   # COTAN extension intrinsic
   dec_math_4.f90
   # DEC old-style PARAMETER statement without parentheses
-  dec_parameter_3.f90
+  dec_parameter_3.f90 # passes with -falternative-parameter-statement
   # TYPE statement as a synonym for PRINT
   dec_type_print.f90
   # Unsupported extension intrinsic procedures for POSIX APIs (chdir, symlnk, getpid, &c)
   g77_intrinsics_sub.f
   noreturn-3.f90
-  # Unsupported: assignment of Hollerith to numeric (b = 4habcd), Hollerith in DATA for numeric, &c.
+  # Unsupported: assignment of Hollerith to logical (b = 4habcd), Hollerith in DATA for numeric, &c.
   hollerith5.f90
   hollerith_legacy.f90
   # Unsupported REALPART and IMAGPART extension intrinsic functions
@@ -175,116 +175,116 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
 
   # unimplemented: procedure pointers
   associated_target_8.f90
-  block_11.f90
-  c_f_pointer_tests_3.f90
+#  block_11.f90 # pmk: works
+#  c_f_pointer_tests_3.f90 # pmk: works
   c_funloc_tests_7.f90
   compiler-directive_1.f90
   dec_structure_15.f90
-  dummy_procedure_7.f90
-  elemental_dependency_4.f90
-  internal_dummy_3.f08
-  optional_absent_7.f90
-  optional_absent_8.f90
+#  dummy_procedure_7.f90 # pmk: works
+#  elemental_dependency_4.f90 # pmk: works
+#  internal_dummy_3.f08 # pmk: works
+#  optional_absent_7.f90 # pmk: works
+#  optional_absent_8.f90 # pmk: works
   pointer_check_1.f90
   pointer_check_2.f90
   pointer_check_3.f90
   pointer_check_4.f90
-  pointer_init_10.f90
-  pointer_init_4.f90
-  pointer_init_5.f90
-  pr66465.f90
-  pr78719_1.f90
-  pr99602a.f90
-  pr99602.f90
-  proc_decl_23.f90
+#  pointer_init_10.f90 # pmk: works
+#  pointer_init_4.f90 # pmk: works
+#  pointer_init_5.f90 # pmk: works
+#  pr66465.f90 # pmk: works
+#  pr78719_1.f90 # pmk: works
+#  pr99602a.f90 # pmk: works
+#  pr99602.f90 # pmk: works
+#  proc_decl_23.f90 # pmk: works
   proc_ptr_1.f90
-  proc_ptr_13.f90
+#  proc_ptr_13.f90 # pmk: works
   proc_ptr_16.f90
-  proc_ptr_18.f90
-  proc_ptr_21.f90
-  proc_ptr_22.f90
-  proc_ptr_23.f90
-  proc_ptr_25.f90
-  proc_ptr_26.f90
+#  proc_ptr_18.f90 # pmk: works
+#  proc_ptr_21.f90 # pmk: works
+#  proc_ptr_22.f90 # pmk: works
+#  proc_ptr_23.f90 # pmk: works
+#  proc_ptr_25.f90 # pmk: works
+#  proc_ptr_26.f90 # pmk: works
   proc_ptr_27.f90
   proc_ptr_28.f90
-  proc_ptr_3.f90
-  proc_ptr_30.f90
-  proc_ptr_31.f90
-  proc_ptr_34.f90
-  proc_ptr_39.f90
-  proc_ptr_42.f90
-  proc_ptr_43.f90
-  proc_ptr_45.f90
-  proc_ptr_5.f90
-  proc_ptr_51.f90
-  proc_ptr_comp_10.f90
-  proc_ptr_comp_8.f90
-  proc_ptr_comp_9.f90
+#  proc_ptr_3.f90 # pmk: works
+  proc_ptr_30.f90 # error properly diagnosed
+#  proc_ptr_31.f90 # pmk: works
+#  proc_ptr_34.f90 # pmk: works
+#  proc_ptr_39.f90 # pmk: works
+#  proc_ptr_42.f90 # pmk: works
+#  proc_ptr_43.f90 # pmk: works
+#  proc_ptr_45.f90 # pmk: works
+#  proc_ptr_5.f90 # pmk: works
+#  proc_ptr_51.f90 # pmk: works
+#  proc_ptr_comp_10.f90 # pmk: works
+#  proc_ptr_comp_8.f90 # pmk: works
+#  proc_ptr_comp_9.f90 # pmk: works
   proc_ptr_result_3.f90
   recursive_check_4.f03
   recursive_check_5.f03
   recursive_check_6.f03
-  stmt_func_1.f90
-  warn_unused_function_3.f90
+  stmt_func_1.f90 # error properly diagnosed
+#  warn_unused_function_3.f90 # pmk: works
 
   # unimplemented: procedure pointer arguments
   internal_pack_17.f90
   module_private_2.f90
-  pr69603.f90
-  proc_ptr_10.f90
-  proc_ptr_19.f90
-  proc_ptr_20.f90
+#  pr69603.f90 # pmk: works
+#  proc_ptr_10.f90 # pmk: works
+#  proc_ptr_19.f90 # pmk: works
+#  proc_ptr_20.f90 # pmk: works
   proc_ptr_29.f90
-  proc_ptr_36.f90
-  proc_ptr_6.f90
+#  proc_ptr_36.f90 # pmk: works
+#  proc_ptr_6.f90 # pmk: works
   proc_ptr_7.f90
-  proc_ptr_9.f90
-  proc_ptr_comp_2.f90
-  submodule_30.f08
+#  proc_ptr_9.f90 # pmk: fixed
+#  proc_ptr_comp_2.f90 # pmk: works
+#  submodule_30.f08 # pmk: works
 
   # unimplemented: procedure components
   assignment_4.f90
-  deferred_type_proc_pointer_1.f90
-  deferred_type_proc_pointer_2.f90
+#  deferred_type_proc_pointer_1.f90 # pmk: works
+#  deferred_type_proc_pointer_2.f90 # pmk: works
   pr82253.f90
   proc_ptr_24.f90
-  proc_ptr_48.f90
+#  proc_ptr_48.f90 # pmk: works
   proc_ptr_comp_1.f90
-  proc_ptr_comp_11.f90
-  proc_ptr_comp_12.f90
-  proc_ptr_comp_15.f90
-  proc_ptr_comp_16.f90
-  proc_ptr_comp_17.f90
-  proc_ptr_comp_13.f90
+#  proc_ptr_comp_11.f90 # pmk: works
+#  proc_ptr_comp_12.f90 # pmk: works
+#  proc_ptr_comp_15.f90 # pmk: works
+#  proc_ptr_comp_16.f90 # pmk: works
+#  proc_ptr_comp_17.f90 # pmk: works
+#  proc_ptr_comp_13.f90 # pmk: works
   proc_ptr_comp_14.f90
-  proc_ptr_comp_18.f90
-  proc_ptr_comp_19.f90
+#  proc_ptr_comp_18.f90 # pmk: works
+#  proc_ptr_comp_19.f90 # pmk: works
   proc_ptr_comp_21.f90
-  proc_ptr_comp_23.f90
-  proc_ptr_comp_24.f90
-  proc_ptr_comp_26.f90
+#  proc_ptr_comp_23.f90 # pmk: works
+#  proc_ptr_comp_24.f90 # pmk: works
+#  proc_ptr_comp_26.f90 # pmk: works
   proc_ptr_comp_27.f90
   proc_ptr_comp_28.f90
-  proc_ptr_comp_29.f90
-  proc_ptr_comp_32.f90
-  proc_ptr_comp_33.f90
-  proc_ptr_comp_34.f90
-  proc_ptr_comp_4.f90
-  proc_ptr_comp_40.f90
+#  proc_ptr_comp_29.f90 # pmk: works
+  proc_ptr_comp_32.f90 # error properly detected
+  proc_ptr_comp_33.f90 # error properly detected
+#  proc_ptr_comp_34.f90 # pmk: works
+#  proc_ptr_comp_4.f90 # pmk: works
+#  proc_ptr_comp_40.f90 # pmk: works
   proc_ptr_comp_44.f90
-  proc_ptr_comp_47.f90
-  proc_ptr_comp_5.f90
-  proc_ptr_comp_51.f90
-  proc_ptr_comp_52.f90
+#  proc_ptr_comp_47.f90 # pmk: works
+#  proc_ptr_comp_5.f90 # pmk: works
+#  proc_ptr_comp_51.f90 # pmk: works
+#  proc_ptr_comp_52.f90 # pmk: works
   proc_ptr_comp_7.f90
-  proc_ptr_comp_pass_1.f90
-  proc_ptr_comp_pass_5.f90
+#  proc_ptr_comp_pass_1.f90 # pmk: works
+#  proc_ptr_comp_pass_5.f90 # pmk: works
   structure_constructor_11.f90
-  typebound_call_19.f03
-  typebound_call_20.f03
-  typebound_operator_9.f03
-  typebound_proc_27.f03
+#  typebound_call_19.f03 # pmk: works
+#  typebound_call_20.f03 # pmk: works
+#  typebound_operator_9.f03 # pmk: works
+#  typebound_proc_27.f03 # pmk: works
 
   # unimplemented: procedure pointer results
   pointer_check_5.f90
@@ -294,45 +294,45 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   proc_ptr_12.f90
   proc_ptr_41.f90
   proc_ptr_49.f90
-  proc_ptr_result_4.f90
+#  proc_ptr_result_4.f90 # pmk: works
   proc_ptr_result_7.f90
 
   # unimplemented: support for polymorphic types.
   ISO_Fortran_binding_17.f90
-  PR100120.f90
-  PR100245.f90
-  PR95331.f90
-  alloc_comp_deep_copy_1.f03
-  allocate_alloc_opt_12.f90
+#  PR100120.f90 # pmk: works
+#  PR100245.f90 # pmk: works
+#  PR95331.f90 # pmk: works
+#  alloc_comp_deep_copy_1.f03 # pmk: works
+#  allocate_alloc_opt_12.f90 # pmk: works
   allocate_alloc_opt_13.f90
-  allocate_alloc_opt_8.f90
+#  allocate_alloc_opt_8.f90 # pmk: works
   allocate_class_4.f90
-  allocate_derived_2.f90
-  allocate_derived_3.f90
-  allocate_with_mold_2.f90
-  allocate_with_mold_4.f90
-  allocate_with_source_18.f03
-  allocate_with_source_13.f03
-  allocate_with_source_14.f03
-  allocate_with_source_17.f03
-  allocate_with_source_21.f03
-  allocate_with_source_25.f90
-  allocate_with_source_8.f08
-  associate_18.f08
-  associate_20.f03
-  associate_8.f03
-  alloc_comp_class_2.f90
-  allocate_alloc_opt_10.f90
-  allocate_with_source_26.f90
-  associate_12.f90
-  associate_13.f90
+#  allocate_derived_2.f90 # pmk: works
+#  allocate_derived_3.f90 # pmk: works
+#  allocate_with_mold_2.f90 # pmk: works
+#  allocate_with_mold_4.f90 # pmk: works
+#  allocate_with_source_18.f03 # pmk: works
+#  allocate_with_source_13.f03 # pmk: works
+#  allocate_with_source_14.f03 # pmk: works
+#  allocate_with_source_17.f03 # pmk: works
+#  allocate_with_source_21.f03 # pmk: works
+#  allocate_with_source_25.f90 # pmk: works
+#  allocate_with_source_8.f08 # pmk: works
+#  associate_18.f08 # pmk: works
+#  associate_20.f03 # pmk: works
+#  associate_8.f03 # pmk: works
+#  alloc_comp_class_2.f90 # pmk: works
+#  allocate_alloc_opt_10.f90 # pmk: works
+#  allocate_with_source_26.f90 # pmk: works
+#  associate_12.f90 # pmk: works
+#  associate_13.f90 # pmk: works
   associate_14.f90
   associate_16.f90
-  associate_40.f90
-  associate_48.f90
+#  associate_40.f90 # pmk: works
+#  associate_48.f90 # pmk: works
   associate_52.f90
-  associated_6.f90
-  associated_target_4.f90
+#  associated_6.f90 # pmk: works
+#  associated_target_4.f90 # pmk: works
   assumed_type_10.f90
   assumed_type_11.f90
   assumed_type_16.f90
@@ -342,96 +342,96 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   assumed_type_4.f90
   assumed_type_7.f90
   auto_dealloc_1.f90
-  auto_dealloc_2.f90
+#  auto_dealloc_2.f90 # pmk: works
   bind_c_array_params_2.f90
   c_assoc_5.f90
-  c_f_pointer_tests_5.f90
-  character_workout_1.f90
-  character_workout_4.f90
-  class_1.f03
+#  c_f_pointer_tests_5.f90 # pmk: works
+#  character_workout_1.f90 # pmk: works
+#  character_workout_4.f90 # pmk: works
+#  class_1.f03 # pmk: works
   class_10.f03
-  class_11.f03
+#  class_11.f03 # pmk: works
   class_12.f03
   class_13.f03
   class_14.f03
   class_15.f03
   class_16.f03
-  class_18.f03
+#  class_18.f03 # pmk: works
   class_21.f03
   class_22.f03
-  class_23.f03
-  class_26.f03
+#  class_23.f03 # pmk: works
+#  class_26.f03 # pmk: works
   class_27.f03
-  class_28.f03
-  class_29.f03
-  class_32.f90
+#  class_28.f03 # pmk: works
+#  class_29.f03 # pmk: works
+#  class_32.f90 # pmk: works
   class_33.f90
-  class_34.f90
-  class_35.f90
+#  class_34.f90 # pmk: works
+#  class_35.f90 # pmk: works
   class_37.f03
-  class_3.f03
+#  class_3.f03 # pmk: works
   class_41.f03
   class_42.f03
-  class_44.f03
+#  class_44.f03 # pmk: works
   class_45a.f03
-  class_47.f90
-  class_48.f90
-  class_46.f03
-  class_51.f90
-  class_52.f90
+#  class_47.f90 # pmk: works
+#  class_48.f90 # pmk: works
+#  class_46.f03 # pmk: works
+#  class_51.f90 # pmk: works
+#  class_52.f90 # pmk: works
   class_54.f90
-  class_6.f03
-  class_62.f90
-  class_63.f90
-  class_64.f90
-  class_66.f90
-  class_68.f90
-  class_allocate_1.f03
-  class_allocate_13.f90
-  class_allocate_16.f90
-  class_allocate_17.f90
-  class_allocate_18.f90
+#  class_6.f03 # pmk: works
+#  class_62.f90 # pmk: works
+#  class_63.f90 # pmk: works
+#  class_64.f90 # pmk: works
+#  class_66.f90 # pmk: works
+#  class_68.f90 # pmk: works
+#  class_allocate_1.f03 # pmk: works
+#  class_allocate_13.f90 # pmk: works
+#  class_allocate_16.f90 # pmk: works
+#  class_allocate_17.f90 # pmk: works
+#  class_allocate_18.f90 # pmk: works
   class_allocate_19.f03
-  class_allocate_21.f90
-  class_allocate_22.f90
-  class_allocate_23.f08
-  class_allocate_24.f90
-  class_allocate_25.f90
-  class_allocate_3.f03
-  class_allocate_4.f03
-  class_allocate_5.f90
-  class_allocate_6.f03
-  class_array_1.f03
-  class_array_15.f03
-  class_array_10.f03
-  class_array_11.f03
+#  class_allocate_21.f90 # pmk: works
+#  class_allocate_22.f90 # pmk: works
+#  class_allocate_23.f08 # pmk: works
+#  class_allocate_24.f90 # pmk: works
+#  class_allocate_25.f90 # pmk: works
+#  class_allocate_3.f03 # pmk: works
+#  class_allocate_4.f03 # pmk: works
+#  class_allocate_5.f90 # pmk: works
+#  class_allocate_6.f03 # pmk: works
+#  class_array_1.f03 # pmk: works
+#  class_array_15.f03 # pmk: works
+#  class_array_10.f03 # pmk: works
+#  class_array_11.f03 # pmk: works
   class_array_12.f03
-  class_array_14.f90
-  class_array_17.f90
-  class_array_18.f90
-  class_array_19.f90
-  class_array_2.f03
-  class_array_20.f03
-  class_array_22.f03
+#  class_array_14.f90 # pmk: works
+#  class_array_17.f90 # pmk: works
+#  class_array_18.f90 # pmk: works
+  class_array_19.f90 # properly catches error
+#  class_array_2.f03 # pmk: works
+#  class_array_20.f03 # pmk: works
+#  class_array_22.f03 # pmk: works
   class_array_3.f03
   class_array_5.f03
   class_array_6.f03
-  class_array_8.f03
-  class_assign_2.f90
-  class_assign_3.f90
-  class_dummy_1.f03
-  class_dummy_8.f90
-  class_dummy_9.f90
-  class_nameclash.f90
-  class_result_2.f90
-  class_result_3.f90
-  class_result_5.f90
-  class_result_6.f90
-  class_result_7.f90
-  class_result_8.f90
-  class_to_type_1.f03
-  class_to_type_4.f90
-  coarray_31.f90
+#  class_array_8.f03 # pmk: works
+#  class_assign_2.f90 # pmk: works
+#  class_assign_3.f90 # pmk: works
+#  class_dummy_1.f03 # pmk: works
+#  class_dummy_8.f90 # pmk: works
+#  class_dummy_9.f90 # pmk: works
+#  class_nameclash.f90 # pmk: works
+#  class_result_2.f90 # pmk: works
+#  class_result_3.f90 # pmk: works
+#  class_result_5.f90 # pmk: works
+#  class_result_6.f90 # pmk: works
+#  class_result_7.f90 # pmk: works
+#  class_result_8.f90 # pmk: works
+#  class_to_type_1.f03 # pmk: works
+#  class_to_type_4.f90 # pmk: works
+#  coarray_31.f90 # pmk: works
   coarray_allocate_2.f08
   coarray_allocate_3.f08
   coarray_allocate_5.f08
@@ -440,174 +440,174 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   coarray_lib_alloc_3.f90
   coarray_poly_5.f90
   contiguous_5.f90
-  default_initialization_6.f90
+#  default_initialization_6.f90 # pmk: works
   deferred_character_20.f90
-  deferred_character_29.f90
+#  deferred_character_29.f90 # pmk: works
   deferred_type_param_3.f90
   defined_assignment_6.f90
   defined_assignment_7.f90
-  defined_assignment_8.f90
-  dependency_53.f90
-  dependency_56.f90
-  dependency_57.f90
-  dependency_60.f90
-  der_io_5.f90
+#  defined_assignment_8.f90 # pmk: works
+#  dependency_53.f90 # pmk: works
+#  dependency_56.f90 # pmk: works
+#  dependency_57.f90 # pmk: works
+#  dependency_60.f90 # pmk: works
+#  der_io_5.f90 # pmk: works
   derived_init_6.f90
   do_check_15.f90
-  dtio_20.f03
-  dtio_23.f90
-  dtio_29.f03
-  dtio_33.f90
-  dtio_35.f90
-  dummy_procedure_4.f90
-  dynamic_dispatch_10.f03
-  elemental_function_5.f90
-  elemental_optional_args_5.f03
-  extends_9.f03
+#  dtio_20.f03 # pmk: works
+#  dtio_23.f90 # pmk: works
+#  dtio_29.f03 # pmk: works
+#  dtio_33.f90 # pmk: works
+#  dtio_35.f90 # pmk: works
+  dummy_procedure_4.f90 # error properly caught
+#  dynamic_dispatch_10.f03 # pmk: works
+#  elemental_function_5.f90 # pmk: works
+#  elemental_optional_args_5.f03 # pmk: works
+#  extends_9.f03 # pmk: works
   extends_type_of_3.f90
-  exit_3.f08
-  extends_type_of_1.f03
-  extends_type_of_2.f03
+#  exit_3.f08 # pmk: works
+#  extends_type_of_1.f03 # pmk: works
+#  extends_type_of_2.f03 # pmk: works
   finalize_10.f90
-  finalize_14.f90
+#  finalize_14.f90 # pmk: works
   finalize_16.f90
-  finalize_18.f90
-  finalize_21.f90
+#  finalize_18.f90 # pmk: works
+#  finalize_21.f90 # pmk: works
   finalize_23.f90
   finalize_28.f90
-  finalize_37.f90
+#  finalize_37.f90 # pmk: works
   generic_22.f03
-  generic_33.f90
-  implicit_class_1.f90
+#  generic_33.f90 # pmk: works
+#  implicit_class_1.f90 # pmk: works
   init_flag_19.f03
-  inline_matmul_25.f90
+#  inline_matmul_25.f90 # pmk: works
   intent_out_7.f90
   interface_32.f90
-  interface_41.f90
-  move_alloc_12.f90
-  move_alloc_13.f90
-  move_alloc_14.f90
-  move_alloc_2.f90
-  move_alloc_5.f90
-  move_alloc_7.f90
-  namelist_91.f90
-  null_10.f90
+#  interface_41.f90 # pmk: works
+#  move_alloc_12.f90 # pmk: works
+#  move_alloc_13.f90 # pmk: works
+#  move_alloc_14.f90 # pmk: works
+#  move_alloc_2.f90 # pmk: works
+#  move_alloc_5.f90 # pmk: works
+#  move_alloc_7.f90 # pmk: works
+#  namelist_91.f90 # pmk: works
+#  null_10.f90 # pmk: works
   pointer_check_7.f90
-  pointer_check_8.f90
-  pointer_array_5.f90
-  pointer_array_8.f90
-  pointer_array_component_3.f90
-  pointer_check_14.f90
-  pointer_intent_4.f90
-  pr100551.f90
+#  pointer_check_8.f90 # pmk: works
+#  pointer_array_5.f90 # pmk: works
+#  pointer_array_8.f90 # pmk: works
+#  pointer_array_component_3.f90 # pmk: works
+#  pointer_check_14.f90 # pmk: works
+#  pointer_intent_4.f90 # pmk: works
+#  pr100551.f90 # pmk: works
   pr100949.f90
   pr105501.f90
-  pr108010.f90
+#  pr108010.f90 # pmk: works
   pr109209.f90
-  pr42051.f03
-  pr48958.f90
-  pr57904.f90
-  pr57987.f90
+#  pr42051.f03 # pmk: works
+#  pr48958.f90 # pmk: works
+#  pr57904.f90 # pmk: works
+#  pr57987.f90 # pmk: works
   pr61960.f90
   pr63331.f90
-  pr64589.f90
+#  pr64589.f90 # pmk: works
   pr64980.f03
-  pr68864.f90
-  pr71047.f08
+#  pr68864.f90 # pmk: works
+#  pr71047.f08 # pmk: works
   pr78092.f90
-  pr86328.f90
-  pr86760.f90
+#  pr86328.f90 # pmk: works
+#  pr86760.f90 # pmk: works
   pr87992.f90
-  pr88379.f90
+#  pr88379.f90 # pmk: works
   pr93473.f90
   pr93601.f90
-  pr94397.F90
+#  pr94397.F90 # pmk: works
   pr95687.f90
   pr95829.f90
   pr99112.f90
   pr99545.f90
-  pr99602c.f90
-  pr99602d.f90
+#  pr99602c.f90 # pmk: works
+#  pr99602d.f90 # pmk: works
   proc_ptr_52.f90
   proc_ptr_50.f90
   proc_ptr_comp_49.f90
-  proc_ptr_comp_50.f90
-  proc_ptr_comp_pass_3.f90
-  proc_ptr_comp_pass_6.f90
+#  proc_ptr_comp_50.f90 # pmk: works
+#  proc_ptr_comp_pass_3.f90 # pmk: works
+#  proc_ptr_comp_pass_6.f90 # pmk: works
   ptr_func_assign_2.f08
-  ptr_func_assign_3.f08
-  realloc_on_assign_20.f90
-  realloc_on_assign_21.f90
-  realloc_on_assign_27.f08
-  realloc_on_assign_31.f90
-  same_type_as_2.f03
+#  ptr_func_assign_3.f08 # pmk: works
+#  realloc_on_assign_20.f90 # pmk: works
+#  realloc_on_assign_21.f90 # pmk: works
+#  realloc_on_assign_27.f08 # pmk: works
+#  realloc_on_assign_31.f90 # pmk: works
+#  same_type_as_2.f03 # pmk: works
   scalar_pointer_1.f90
   select_type_10.f03
-  select_type_12.f03
-  select_type_13.f03
-  select_type_14.f03
+#  select_type_12.f03 # pmk: works
+#  select_type_13.f03 # pmk: works
+#  select_type_14.f03 # pmk: works
   select_type_16.f03
-  select_type_17.f03
+#  select_type_17.f03 # pmk: works
   select_type_18.f03
-  select_type_19.f03
-  select_type_2.f03
-  select_type_26.f03
-  select_type_27.f03
-  select_type_3.f03
-  select_type_35.f03
-  select_type_37.f03
-  select_type_39.f03
-  select_type_5.f03
-  select_type_6.f03
-  select_type_7.f03
-  select_type_8.f03
-  select_type_4.f90
-  select_type_40.f90
+#  select_type_19.f03 # pmk: works
+#  select_type_2.f03 # pmk: works
+#  select_type_26.f03 # pmk: works
+#  select_type_27.f03 # pmk: works
+#  select_type_3.f03 # pmk: works
+#  select_type_35.f03 # pmk: works
+#  select_type_37.f03 # pmk: works
+#  select_type_39.f03 # pmk: works
+#  select_type_5.f03 # pmk: works
+#  select_type_6.f03 # pmk: works
+#  select_type_7.f03 # pmk: works
+#  select_type_8.f03 # pmk: works
+#  select_type_4.f90 # pmk: works
+#  select_type_40.f90 # pmk: works
   select_type_41.f90
-  select_type_42.f90
-  select_type_44.f90
-  select_type_45.f90
-  select_type_46.f90
+#  select_type_42.f90 # pmk: works
+#  select_type_44.f90 # pmk: works
+#  select_type_45.f90 # pmk: works
+#  select_type_46.f90 # pmk: works
   select_type_47.f90
   select_type_48.f90
-  select_type_49.f90
-  select_type_50.f90
+#  select_type_49.f90 # pmk: works
+#  select_type_50.f90 # pmk: works
   sizeof_5.f90
   storage_size_1.f08
-  storage_size_3.f08
+#  storage_size_3.f08 # pmk: works
   storage_size_5.f90
-  structure_constructor_13.f03
+#  structure_constructor_13.f03 # pmk: works
   temporary_2.f90
   transfer_class_1.f90
-  transfer_class_3.f90
-  type_to_class_1.f03
-  type_to_class_2.f03
-  type_to_class_3.f03
-  type_to_class_5.f03
+#  transfer_class_3.f90 # pmk: works
+#  type_to_class_1.f03 # pmk: works
+#  type_to_class_2.f03 # pmk: works
+#  type_to_class_3.f03 # pmk: works
+#  type_to_class_5.f03 # pmk: works
   typebound_assignment_1.f03
   typebound_assignment_2.f03
-  typebound_assignment_3.f03
+#  typebound_assignment_3.f03 # pmk: works
   typebound_assignment_4.f90
-  typebound_assignment_5.f03
-  typebound_assignment_6a.f03
+#  typebound_assignment_5.f03 # pmk: works
+#  typebound_assignment_6a.f03 # pmk: works
   typebound_assignment_8.f90
   typebound_call_11.f03
-  typebound_call_12.f03
+#  typebound_call_12.f03 # pmk: works
   typebound_call_14.f03
-  typebound_call_16.f03
-  typebound_call_21.f03
-  typebound_call_22.f03
+#  typebound_call_16.f03 # pmk: works
+#  typebound_call_21.f03 # pmk: works
+#  typebound_call_22.f03 # pmk: works
   typebound_call_23.f03
-  typebound_call_26.f90
+#  typebound_call_26.f90 # pmk: works
   typebound_call_27.f90
   typebound_call_28.f90
   typebound_call_30.f90
   typebound_deferred_1.f90
   typebound_generic_14.f03
-  typebound_generic_7.f03
+#  typebound_generic_7.f03 # pmk: works
   typebound_generic_8.f03
   typebound_operator_11.f90
-  typebound_operator_17.f90
+#  typebound_operator_17.f90 # pmk: works
   typebound_operator_18.f90
   typebound_operator_19.f90
   typebound_operator_1.f03
@@ -620,53 +620,53 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   typebound_proc_1.f08
   typebound_proc_21.f90
   typebound_proc_24.f03
-  typebound_proc_25.f90
+#  typebound_proc_25.f90 # pmk: works
   typebound_proc_30.f90
   typebound_proc_31.f90
   typebound_proc_32.f90
-  typebound_proc_33.f90
-  unlimited_polymorphic_11.f90
+#  typebound_proc_33.f90 # pmk: works
+#  unlimited_polymorphic_11.f90 # pmk: works
   unlimited_polymorphic_12.f90
-  unlimited_polymorphic_15.f90
+#  unlimited_polymorphic_15.f90 # pmk: works
   unlimited_polymorphic_16.f90
   unlimited_polymorphic_14.f90
-  unlimited_polymorphic_17.f90
-  unlimited_polymorphic_20.f90
-  unlimited_polymorphic_21.f90
-  unlimited_polymorphic_22.f90
-  unlimited_polymorphic_24.f03
-  unlimited_polymorphic_25.f03
-  unlimited_polymorphic_3.f03
-  unlimited_polymorphic_30.f03
+#  unlimited_polymorphic_17.f90 # pmk: works
+#  unlimited_polymorphic_20.f90 # pmk: works
+#  unlimited_polymorphic_21.f90 # pmk: works
+#  unlimited_polymorphic_22.f90 # pmk: works
+#  unlimited_polymorphic_24.f03 # pmk: works
+#  unlimited_polymorphic_25.f03 # pmk: works
+#  unlimited_polymorphic_3.f03 # pmk: works
+#  unlimited_polymorphic_30.f03 # pmk: works
   unlimited_polymorphic_32.f90
-  unlimited_polymorphic_32.f03
-  unlimited_polymorphic_5.f90
-  unlimited_polymorphic_6.f90
+#  unlimited_polymorphic_32.f03 # pmk: works
+#  unlimited_polymorphic_5.f90 # pmk: works
+#  unlimited_polymorphic_6.f90 # pmk: works
   unlimited_polymorphic_7.f90
-  unlimited_polymorphic_8.f90
-  unresolved_fixup_1.f90
+#  unlimited_polymorphic_8.f90 # pmk: works
+#  unresolved_fixup_1.f90 # pmk: works
   use_20.f90
-  use_21.f90
-  use_26.f90
-  warn_conversion_11.f90
-  whole_file_27.f90
+#  use_21.f90 # pmk: works
+#  use_26.f90 # pmk: works
+#  warn_conversion_11.f90 # pmk: works
+#  whole_file_27.f90 # pmk: works
 
   # unimplemented: BIND (C) internal procedure.
-  ISO_Fortran_binding_19.f90
-  PR93308.f90
+#  ISO_Fortran_binding_19.f90 # pmk: works
+#  PR93308.f90 # pmk: works
   array_reference_3.f90
-  bind_c_char_2.f90
-  bind_c_char_3.f90
+#  bind_c_char_2.f90 # pmk: works
+#  bind_c_char_3.f90 # pmk: works
   bind_c_char_4.f90
   bind_c_char_5.f90
-  internal_dummy_4.f08
+#  internal_dummy_4.f08 # pmk: works
 
   # unimplemented: BIND(C) internal procedures:
   bind-c-char-descr.f90
-  bind_c_usage_11.f03
-  bind_c_usage_9.f03
-  init_flag_16.f03
-  null_actual_2.f90
+#  bind_c_usage_11.f03 # pmk: works
+#  bind_c_usage_9.f03 # pmk: works
+#  init_flag_16.f03 # pmk: works
+#  null_actual_2.f90 # pmk: works
 
   # unimplemented: BIND(C) module variable linkage
   bind_c_dts.f90
@@ -695,63 +695,63 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   deferred_type_component_2.f90
 
   # unimplemented: character array expression temp with dynamic length.
-  actual_array_constructor_2.f90
-  array_constructor_17.f90
-  associate_35.f90
-  assumed_charlen_arg_1.f90
-  assumed_charlen_sharing.f90
-  char_cons_len.f90
+#  actual_array_constructor_2.f90 # pmk: works
+#  array_constructor_17.f90 # pmk: works
+#  associate_35.f90 # pmk: works
+#  assumed_charlen_arg_1.f90 # pmk: works
+#  assumed_charlen_sharing.f90 # pmk: works
+#  char_cons_len.f90 # pmk: works
   char_length_13.f90
-  char_length_23.f90
-  char_length_7.f90
+#  char_length_23.f90 # pmk: works
+#  char_length_7.f90 # pmk: works
   char_result_13.f90
-  deferred_character_36.f90
+#  deferred_character_36.f90 # pmk: works
   mapping_3.f90
-  pr77506.f90
-  pr91862.f90
-  transfer_resolve_1.f90
+#  pr77506.f90 # pmk: works
+#  pr91862.f90 # pmk: works
+#  transfer_resolve_1.f90 # pmk: works
 
   # unimplemented: allocatable components in derived type assignment
-  alloc_comp_result_2.f90
+#  alloc_comp_result_2.f90 # pmk: works
   generic_30.f90
-  pr50769.f90
-  realloc_on_assign_16a.f90
+#  pr50769.f90 # pmk: works
+#  realloc_on_assign_16a.f90 # pmk: works
 
   # unimplemented: gather rhs LEN parameters in assignment to allocatable
-  allocate_assumed_charlen_4.f90
-  allocate_error_5.f90
-  associate_58.f90
+#  allocate_assumed_charlen_4.f90 # pmk: works
+  allocate_error_5.f90 # should fail, does
+#  associate_58.f90 # pmk: works
   bounds_check_22.f90
   char_length_20.f90
   char_length_21.f90
-  deferred_character_1.f90
-  deferred_character_14.f90
-  deferred_character_2.f90
-  deferred_character_21.f90
-  deferred_character_22.f90
+#  deferred_character_1.f90 # pmk: works
+#  deferred_character_14.f90 # pmk: works
+#  deferred_character_2.f90 # pmk: works
+#  deferred_character_21.f90 # pmk: works
+#  deferred_character_22.f90 # pmk: works
   deferred_character_27.f90
-  deferred_character_34.f90
-  deferred_character_4.f90
-  deferred_character_7.f90
-  dependency_50.f90
-  dependency_51.f90
+#  deferred_character_34.f90 # pmk: works
+#  deferred_character_4.f90 # pmk: works
+#  deferred_character_7.f90 # pmk: works
+#  dependency_50.f90 # pmk: works
+#  dependency_51.f90 # pmk: works
   elemental_function_3.f90
   elemental_function_2.f90
   realloc_on_assign_14.f90
-  widechar_11.f90
+#  widechar_11.f90 # pmk: works
 
   # unimplemented: passing dynamically optional argument to elemental procedures
-  bounds_check_9.f90
+#  bounds_check_9.f90 # pmk: works
   bounds_check_fail_2.f90
   elemental_optional_args_1.f90
-  elemental_optional_args_2.f90
-  elemental_optional_args_3.f90
-  elemental_optional_args_4.f90
-  elemental_optional_args_6.f90
-  elemental_optional_args_7.f90
-  generic_31.f90
-  optional_absent_2.f90
-  pr95446.f90
+#  elemental_optional_args_2.f90 # pmk: works
+#  elemental_optional_args_3.f90 # pmk: works
+#  elemental_optional_args_4.f90 # pmk: works
+#  elemental_optional_args_6.f90 # pmk: works
+#  elemental_optional_args_7.f90 # pmk: works
+#  generic_31.f90 # pmk: works
+#  optional_absent_2.f90 # pmk: works
+#  pr95446.f90 # pmk: works
 
   # unimplemented: io-control-spec contains a reference to a non-integer,
   # non-scalar, or non-variable
@@ -846,8 +846,8 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
 
   # unimplemented: intrinsic: execute_command_line
   execute_command_line_1.f90
-  execute_command_line_2.f90
-  execute_command_line_3.f90
+#  execute_command_line_2.f90 # pmk: works
+#  execute_command_line_3.f90 # pmk: works
 
   # unimplemented: intrinsic: failed_images
   coarray_failed_images_1.f08
@@ -928,8 +928,8 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   pdt_31.f03
 
   # unimplemented: derived type components with non default lower bounds
-  structure_constructor_1.f03
-  vax_structure_1.f90
+#  structure_constructor_1.f03 # pmk: works
+#  vax_structure_1.f90 # pmk: works
   whole_file_11.f90
 
   # unimplemented: derived type specification expression is neither constant nor
@@ -967,11 +967,11 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   volatile8.f90
 
   # unimplemented: assignment to pointer result of function reference
-  ptr-func-3.f90
-  ptr_func_assign_5.f08
+#  ptr-func-3.f90 # pmk: works
+#  ptr_func_assign_5.f08 # pmk: works
 
   # unimplemented: deep copy on allocatable members
-  alloc_comp_auto_array_3.f90
+#  alloc_comp_auto_array_3.f90 # pmk: works
 
   # unimplemented: no math runtime available for '[SYM]'
   large_integer_kind_2.f90
@@ -996,138 +996,138 @@ file(GLOB UNIMPLEMENTED_FILES CONFIGURE_DEPENDS
   # These tests are NYI: support for polymorphic types; when polymorphic
   # type support is enabled by option, they pass.  Delete these when
   # polymorphic types are enabled by default.
-  actual_array_offset_1.f90
-  allocate_class_3.f90
+#  actual_array_offset_1.f90 # pmk: works
+#  allocate_class_3.f90 # pmk: works
   allocate_class_4.f90
-  allocate_with_mold_1.f90
-  allocate_with_mold_3.f90
-  allocate_with_source_15.f03
-  allocate_with_source_16.f90
-  allocate_with_source_5.f90
-  allocate_with_source_6.f90
-  allocate_with_source_7.f08
-  alloc_comp_assign_12.f03
-  alloc_comp_assign_16.f03
-  alloc_comp_class_1.f90
-  alloc_comp_class_4.f03
-  alloc_comp_class_5.f03
-  associate_28.f90
-  associate_46.f90
-  associate_60.f90
-  associated_target_6.f03
-  associated_target_7.f90
-  class_19.f03
-  class_25.f03
-  class_40.f03
-  class_65.f90
-  class_67.f90
-  class_70.f03
-  class_alias.f90
-  class_allocate_11.f03
-  class_allocate_12.f90
-  class_allocate_14.f90
-  class_allocate_15.f90
-  class_allocate_20.f90
-  class_array_16.f90
-  class_array_21.f03
-  class_array_23.f03
-  class_array_7.f03
-  class_array_9.f03
-  class_defined_operator_1.f03
-  class_defined_operator_2.f03
-  class_dummy_2.f03
-  class_result_9.f90
-  class_result_10.f90
-  class_result_1.f03
-  class_to_type_3.f03
-  deferred_character_11.f90
-  deferred_character_13.f90
-  deferred_character_23.f90
-  deferred_character_28.f90
-  deferred_character_5.f90
-  deferred_type_component_3.f90
-  der_ptr_component_2.f90
-  dtio_12.f90
-  dtio_17.f90
-  dtio_19.f90
-  dtio_1.f90
-  dtio_27.f90
-  dtio_28.f03
-  dtio_2.f90
-  dtio_31.f03
-  dtio_32.f03
-  dtio_34.f90
-  dynamic_dispatch_11.f03
-  dynamic_dispatch_4.f03
-  dynamic_dispatch_5.f03
-  dynamic_dispatch_6.f03
-  dynamic_dispatch_7.f03
-  dynamic_dispatch_8.f03
-  dynamic_dispatch_9.f03
-  elemental_dependency_5.f90
-  elemental_subroutine_10.f90
-  elemental_subroutine_11.f90
-  finalize_13.f90
-  finalize_31.f90
-  finalize_33.f90
-  finalize_36.f90
-  finalize_38.f90
-  finalize_52.f90
-  generic_23.f03
-  intent_optimize_10.f90
-  module_procedure_6.f90
-  module_read_2.f90
-  optional_class_1.f90
-  pointer_array_4.f90
-  pointer_init_8.f90
-  PR100132.f90
-  PR100136.f90
-  pr106731.f90
-  pr107872.f90
-  pr62125.f90
-  pr64230.f90
-  pr84155.f90
-  pr99602b.f90
-  same_type_as_3.f03
-  select_type_15.f03
-  select_type_36.f03
-  select_type_43.f90
-  submodule_18.f08
-  submodule_6.f08
-  typebound_assignment_5a.f03
-  typebound_assignment_6.f03
-  typebound_assignment_7.f90
-  typebound_call_10.f03
-  typebound_call_17.f03
-  typebound_call_18.f03
-  typebound_call_2.f03
-  typebound_call_3.f03
-  typebound_generic_3.f03
-  typebound_generic_4.f03
-  typebound_generic_6.f03
-  typebound_generic_9.f03
-  typebound_operator_12.f03
-  typebound_operator_13.f03
-  typebound_operator_20.f90
-  typebound_operator_21.f03
-  typebound_operator_3.f03
-  typebound_operator_6.f03
-  typebound_operator_7.f03
-  typebound_operator_8.f03
-  typebound_proc_20.f90
-  typebound_proc_23.f90
-  typebound_proc_35.f90
-  typebound_proc_36.f90
-  type_to_class_4.f03
-  unlimited_polymorphic_18.f90
-  unlimited_polymorphic_19.f90
-  unlimited_polymorphic_23.f90
-  unlimited_polymorphic_25.f90
-  unlimited_polymorphic_26.f90
-  unlimited_polymorphic_29.f90
-  use_24.f90
-  use_27.f90
-  used_dummy_types_1.f90
+#  allocate_with_mold_1.f90 # pmk: works
+#  allocate_with_mold_3.f90 # pmk: works
+#  allocate_with_source_15.f03 # pmk: works
+#  allocate_with_source_16.f90 # pmk: works
+#  allocate_with_source_5.f90 # pmk: works
+#  allocate_with_source_6.f90 # pmk: works
+#  allocate_with_source_7.f08 # pmk: works
+#  alloc_comp_assign_12.f03 # pmk: works
+#  alloc_comp_assign_16.f03 # pmk: works
+#  alloc_comp_class_1.f90 # pmk: works
+#  alloc_comp_class_4.f03 # pmk: works
+#  alloc_comp_class_5.f03 # pmk: works
+#  associate_28.f90 # pmk: works
+#  associate_46.f90 # pmk: works
+  associate_60.f90 # NYI: dynamic length in structure constructor
+#  associated_target_6.f03 # pmk: works
+#  associated_target_7.f90 # pmk: works
+#  class_19.f03 # pmk: works
+#  class_25.f03 # pmk: works
+#  class_40.f03 # pmk: works
+#  class_65.f90 # pmk: works
+#  class_67.f90 # pmk: works
+#  class_70.f03 # pmk: works
+#  class_alias.f90 # pmk: works
+#  class_allocate_11.f03 # pmk: works
+#  class_allocate_12.f90 # pmk: works
+#  class_allocate_14.f90 # pmk: works
+#  class_allocate_15.f90 # pmk: works
+#  class_allocate_20.f90 # pmk: works
+#  class_array_16.f90 # pmk: works
+#  class_array_21.f03 # pmk: works
+#  class_array_23.f03 # pmk: works
+#  class_array_7.f03 # pmk: works
+#  class_array_9.f03 # pmk: works
+#  class_defined_operator_1.f03 # pmk: works
+#  class_defined_operator_2.f03 # pmk: works
+#  class_dummy_2.f03 # pmk: works
+#  class_result_9.f90 # pmk: works
+#  class_result_10.f90 # pmk: works
+#  class_result_1.f03 # pmk: works
+#  class_to_type_3.f03 # pmk: works
+#  deferred_character_11.f90 # pmk: works
+#  deferred_character_13.f90 # pmk: works
+#  deferred_character_23.f90 # pmk: works
+#  deferred_character_28.f90 # pmk: works
+#  deferred_character_5.f90 # pmk: works
+#  deferred_type_component_3.f90 # pmk: works
+#  der_ptr_component_2.f90 # pmk: works
+#  dtio_12.f90 # pmk: works
+#  dtio_17.f90 # pmk: works
+#  dtio_19.f90 # pmk: works
+#  dtio_1.f90 # pmk: works
+  dtio_27.f90 # runtime: excessive output to fixed-size record
+#  dtio_28.f03 # pmk: works
+#  dtio_2.f90 # pmk: works
+#  dtio_31.f03 # pmk: works
+#  dtio_32.f03 # pmk: works
+#  dtio_34.f90 # pmk: works
+#  dynamic_dispatch_11.f03 # pmk: works
+#  dynamic_dispatch_4.f03 # pmk: works
+#  dynamic_dispatch_5.f03 # pmk: works
+#  dynamic_dispatch_6.f03 # pmk: works
+#  dynamic_dispatch_7.f03 # pmk: works
+#  dynamic_dispatch_8.f03 # pmk: works
+#  dynamic_dispatch_9.f03 # pmk: works
+#  elemental_dependency_5.f90 # pmk: works
+#  elemental_subroutine_10.f90 # pmk: works
+#  elemental_subroutine_11.f90 # pmk: works
+#  finalize_13.f90 # pmk: works
+#  finalize_31.f90 # pmk: works
+#  finalize_33.f90 # pmk: works
+#  finalize_36.f90 # pmk: works
+#  finalize_38.f90 # pmk: works
+#  finalize_52.f90 # pmk: works
+#  generic_23.f03 # pmk: works
+#  intent_optimize_10.f90 # pmk: works
+#  module_procedure_6.f90 # pmk: works
+#  module_read_2.f90 # pmk: works
+#  optional_class_1.f90 # pmk: works
+#  pointer_array_4.f90 # pmk: works
+#  pointer_init_8.f90 # pmk: works
+#  PR100132.f90 # pmk: works
+  PR100136.f90 # should fail, doesn't (?)
+#  pr106731.f90 # pmk: works
+#  pr107872.f90 # pmk: works
+#  pr62125.f90 # pmk: works
+#  pr64230.f90 # pmk: works
+#  pr84155.f90 # pmk: works
+#  pr99602b.f90 # pmk: works
+#  same_type_as_3.f03 # pmk: works
+#  select_type_15.f03 # pmk: works
+#  select_type_36.f03 # pmk: works
+#  select_type_43.f90 # pmk: works
+#  submodule_18.f08 # pmk: works
+#  submodule_6.f08 # pmk: works
+#  typebound_assignment_5a.f03 # pmk: works
+#  typebound_assignment_6.f03 # pmk: works
+#  typebound_assignment_7.f90 # pmk: works
+#  typebound_call_10.f03 # pmk: works
+#  typebound_call_17.f03 # pmk: works
+#  typebound_call_18.f03 # pmk: works
+#  typebound_call_2.f03 # pmk: works
+#  typebound_call_3.f03 # pmk: works
+#  typebound_generic_3.f03 # pmk: works
+#  typebound_generic_4.f03 # pmk: works
+#  typebound_generic_6.f03 # pmk: works
+#  typebound_generic_9.f03 # pmk: works
+#  typebound_operator_12.f03 # pmk: works
+#  typebound_operator_13.f03 # pmk: works
+#  typebound_operator_20.f90 # pmk: works
+#  typebound_operator_21.f03 # pmk: works
+#  typebound_operator_3.f03 # pmk: works
+#  typebound_operator_6.f03 # pmk: works
+#  typebound_operator_7.f03 # pmk: works
+#  typebound_operator_8.f03 # pmk: works
+#  typebound_proc_20.f90 # pmk: works
+#  typebound_proc_23.f90 # pmk: works
+#  typebound_proc_35.f90 # pmk: works
+#  typebound_proc_36.f90 # pmk: works
+#  type_to_class_4.f03 # pmk: works
+#  unlimited_polymorphic_18.f90 # pmk: works
+#  unlimited_polymorphic_19.f90 # pmk: works
+#  unlimited_polymorphic_23.f90 # pmk: works
+#  unlimited_polymorphic_25.f90 # pmk: works
+#  unlimited_polymorphic_26.f90 # pmk: works
+#  unlimited_polymorphic_29.f90 # pmk: works
+#  use_24.f90 # pmk: works
+#  use_27.f90 # pmk: works
+#  used_dummy_types_1.f90 # pmk: works
 )
 
 # These tests are skipped because they cannot be compiled. Unlike the
@@ -1149,59 +1149,59 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   # environment, but are usually successful when run manually.
   ISO_Fortran_binding_8.f90
   ISO_Fortran_binding_12.f90
-  binding_c_table_15_1.f03
-  binding_label_tests_16.f03
-  binding_label_tests_33.f90
+#  binding_c_table_15_1.f03 # pmk: works
+#  binding_label_tests_16.f03 # pmk: works
+#  binding_label_tests_33.f90 # pmk: works
   bind_c_coms.f90
   bind_c_dts_2.f03
   bind_c_usage_10.f03
   bind_c_usage_16.f03
   bind_c_usage_24.f90
   bind_c_usage_33.f90
-  com_block_driver.f90
-  c_char_tests_2.f03
-  c_funloc_tests.f03
+#  com_block_driver.f90 # pmk: works
+#  c_char_tests_2.f03 # pmk: works
+#  c_funloc_tests.f03 # pmk: works
   c_funloc_tests_3.f03
   c_funloc_tests_4.f03
-  c_f_pointer_shape_tests_5.f90
+#  c_f_pointer_shape_tests_5.f90 # pmk: works
   c_f_pointer_tests.f90
-  c_f_pointer_tests_4.f90
-  c_kind_int128_test2.f03
+#  c_f_pointer_tests_4.f90 # pmk: works
+#  c_kind_int128_test2.f03 # pmk: works
   c_loc_test.f90
   c_loc_tests_2.f03
-  c_loc_test_20.f90
+#  c_loc_test_20.f90 # pmk: works
   c_ptr_tests.f03
-  c_ptr_tests_14.f90
-  c_ptr_tests_19.f90
+#  c_ptr_tests_14.f90 # pmk: works
+#  c_ptr_tests_19.f90 # pmk: works
   c_ptr_tests_7.f03
   c_ptr_tests_8.f03
-  c_sizeof_1.f90
-  c_sizeof_5.f90
+#  c_sizeof_1.f90 # pmk: works
+#  c_sizeof_5.f90 # pmk: works
   c_size_t_test.f03
-  deferred_character_10.f90
+#  deferred_character_10.f90 # pmk: works
   iso_c_binding_rename_2.f03
   iso_fortran_binding_uint8_array.f90
-  logical_temp_io.f90
-  logical_temp_io_kind8.f90
-  pointer_remapping_10.f90
+#  logical_temp_io.f90 # pmk: works
+#  logical_temp_io_kind8.f90 # pmk: works
+#  pointer_remapping_10.f90 # pmk: works
   pr32627.f03
-  pr35983.f90
-  pr43866.f90
-  pr47008.f03
-  pr71764.f90
-  pr88611.f90
-  print_c_kinds.f90
-  proc_decl_17.f90
-  proc_decl_2.f90
-  repack_arrays_1.f90
-  transfer_simplify_10.f90
-  value_tests_f03.f90
+#  pr35983.f90 # pmk: works
+#  pr43866.f90 # pmk: works
+#  pr47008.f03 # pmk: works
+#  pr71764.f90 # pmk: works
+#  pr88611.f90 # pmk: works
+#  print_c_kinds.f90 # pmk: works
+#  proc_decl_17.f90 # pmk: works
+#  proc_decl_2.f90 # pmk: works
+#  repack_arrays_1.f90 # pmk: works
+#  transfer_simplify_10.f90 # pmk: works
+#  value_tests_f03.f90 # pmk: works
 
   # lowering bugs (reported)
-  realloc_on_assign_2.f03
+#  realloc_on_assign_2.f03 # pmk: works
   where_2.f90
   c_char_tests.f03
-  goto_2.f90 # goto 10 when 10 END IF fails
+#  goto_2.f90 # pmk: works
   masklr_2.F90
 
   # Categorize and debug further
@@ -1232,149 +1232,148 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   winapi.f90 # needs -lkernel32 and target *-*-cygwin*
 
   # error: 'fir.convert' op invalid type conversion
-  achar_4.f90
-  char_cast_2.f90
+#  achar_4.f90 # pmk: works
+#  char_cast_2.f90 # pmk: works
   c_char_tests_4.f90
   c_char_tests_5.f90
-  widechar_6.f90
+#  widechar_6.f90 # pmk: works
   widechar_intrinsics_2.f90
   widechar_intrinsics_3.f90
-  widechar_intrinsics_6.f90
-  widechar_intrinsics_7.f90
-  widechar_select_1.f90
+#  widechar_intrinsics_6.f90 # pmk: works, needs -fbackslash
+#  widechar_intrinsics_7.f90 # pmk: works, needs -fbackslash
+#  widechar_select_1.f90 # pmk: works, needs -fbackslash
 
   # error: 'llvm.mlir.constant' op expected array type of 4294967300 i8 elements
   # for the string constant:
   string_1.f90
 
-  # error: pointer not a MutableBoxValue:
-  associated_7.f90
+  associated_7.f90 # error properly caught
 
   # error: symbol is not mapped to any IR value:
-  array_constructor_21.f90
-  where_operator_assign_2.f90
+#  array_constructor_21.f90 # pmk: works
+#  where_operator_assign_2.f90 # pmk: works
 
   # error: a function must have a type
   proc_decl_9.f90
 
   # error: not a constant derived type expression
-  allocate_with_source_10.f08
-  allocate_with_source_11.f08
-  arrayio_12.f90
-  associate_25.f90
-  associated_4.f90
-  associated_target_5.f03
-  automatic_default_init_1.f90
-  char_component_initializer_1.f90
-  char_component_initializer_2.f90
-  char_length_8.f90
-  charlen_15.f90
-  charlen_16.f90
-  class_9.f03
-  class_allocate_10.f03
-  class_allocate_7.f03
-  class_allocate_8.f03
-  class_allocate_9.f03
-  class_array_4.f03
-  class_to_type_2.f90
-  coarray_42.f90
-  constructor_3.f90
-  dec_structure_6.f90
-  default_initialization_3.f90
-  default_initialization_4.f90
-  deferred_character_26.f90
-  defined_assignment_1.f90
-  defined_assignment_10.f90
-  defined_assignment_11.f90
-  defined_assignment_2.f90
-  defined_assignment_3.f90
-  defined_assignment_4.f90
-  defined_assignment_5.f90
-  defined_assignment_9.f90
-  dependency_25.f90
-  der_array_io_3.f90
-  derived_init_1.f90
-  derived_init_2.f90
-  derived_init_4.f90
-  derived_pointer_recursion_2.f90
-  dtio_22.f90
-  dynamic_dispatch_1.f03
-  dynamic_dispatch_12.f90
-  dynamic_dispatch_2.f03
-  dynamic_dispatch_3.f03
-  extends_1.f03
-  extends_16.f90
-  extends_3.f03
-  finalize_15.f90
-  finalize_29.f08
-  finalize_39.f90
-  finalize_40.f90
-  finalize_41.f90
-  finalize_42.f90
-  finalize_43.f90
-  finalize_44.f90
-  finalize_45.f90
-  finalize_46.f90
-  finalize_47.f90
-  finalize_48.f90
-  forall_19.f90
-  init_flag_10.f90
-  initialization_11.f90
-  initialization_19.f90
-  initialization_27.f90
-  inquiry_type_ref_1.f08
-  intent_out_13.f90
-  intent_out_2.f90
-  intent_out_5.f90
-  interface_assignment_1.f90
-  internal_pack_10.f90
-  internal_pack_6a.f90
-  intrinsic_pack_5.f90
-  intrinsic_pack_6.f90
-  move_alloc_10.f90
-  move_alloc_6.f90
-  namelist_13.f90
-  namelist_15.f90
-  namelist_40.f90
-  namelist_47.f90
-  namelist_64.f90
-  namelist_78.f90
-  namelist_96.f90
-  no-automatic.f90
-  optional_assumed_charlen_2.f90
-  pointer_array_component_2.f90
-  pointer_assign_10.f90
-  pointer_assign_11.f90
-  pointer_assign_8.f90
-  pointer_assign_9.f90
-  pointer_init_3.f90
-  pr19926.f90
-  pr51434.f90
-  pr68078.f90
-  pr69739.f90
-  pr78290.f90
-  pr83864.f90
-  pr85786.f90
-  result_default_init_1.f90
-  structure_constructor_5.f03
-  submodule_1.f08
-  submodule_2.f08
-  temporary_3.f90
-  transfer_class_2.f90
-  typebound_call_32.f90
-  typebound_operator_15.f90
+#  allocate_with_source_10.f08 # pmk: works
+#  allocate_with_source_11.f08 # pmk: works
+#  arrayio_12.f90 # pmk: works
+#  associate_25.f90 # pmk: works
+#  associated_4.f90 # pmk: works
+#  associated_target_5.f03 # pmk: works
+#  automatic_default_init_1.f90 # pmk: works
+#  char_component_initializer_1.f90 # pmk: works
+#  char_component_initializer_2.f90 # pmk: works
+#  char_length_8.f90 # pmk: works
+#  charlen_15.f90 # pmk: works
+#  charlen_16.f90 # pmk: works
+#  class_9.f03 # pmk: works
+#  class_allocate_10.f03 # pmk: works
+#  class_allocate_7.f03 # pmk: works
+#  class_allocate_8.f03 # pmk: works
+#  class_allocate_9.f03 # pmk: works
+#  class_array_4.f03 # pmk: works
+#  class_to_type_2.f90 # pmk: works
+  coarray_42.f90 # coarrays NYI
+#  constructor_3.f90 # pmk: works
+#  dec_structure_6.f90 # pmk: works
+#  default_initialization_3.f90 # pmk: works
+#  default_initialization_4.f90 # pmk: works
+#  deferred_character_26.f90 # pmk: works
+#  defined_assignment_1.f90 # pmk: works
+#  defined_assignment_10.f90 # pmk: works
+#  defined_assignment_11.f90 # pmk: works
+#  defined_assignment_2.f90 # pmk: works
+#  defined_assignment_3.f90 # pmk: works
+#  defined_assignment_4.f90 # pmk: works
+#  defined_assignment_5.f90 # pmk: works
+#  defined_assignment_9.f90 # pmk: works
+#  dependency_25.f90 # pmk: works
+#  der_array_io_3.f90 # pmk: works
+#  derived_init_1.f90 # pmk: works
+#  derived_init_2.f90 # pmk: works
+#  derived_init_4.f90 # pmk: works
+#  derived_pointer_recursion_2.f90 # pmk: works
+#  dtio_22.f90 # pmk: works
+#  dynamic_dispatch_1.f03 # pmk: works
+#  dynamic_dispatch_12.f90 # pmk: works
+#  dynamic_dispatch_2.f03 # pmk: works
+#  dynamic_dispatch_3.f03 # pmk: works
+#  extends_1.f03 # pmk: works
+#  extends_16.f90 # pmk: works
+#  extends_3.f03 # pmk: works
+#  finalize_15.f90 # pmk: works
+#  finalize_29.f08 # pmk: works
+#  finalize_39.f90 # pmk: works
+#  finalize_40.f90 # pmk: works
+#  finalize_41.f90 # pmk: works
+#  finalize_42.f90 # pmk: works
+#  finalize_43.f90 # pmk: works
+#  finalize_44.f90 # pmk: works
+#  finalize_45.f90 # pmk: works
+#  finalize_46.f90 # pmk: works
+#  finalize_47.f90 # pmk: works
+#  finalize_48.f90 # pmk: works
+#  forall_19.f90 # pmk: works
+  init_flag_10.f90 # needs -finit-real=NAN
+#  initialization_11.f90 # pmk: works
+#  initialization_19.f90 # pmk: works
+#  initialization_27.f90 # pmk: works
+#  inquiry_type_ref_1.f08 # pmk: works
+#  intent_out_13.f90 # pmk: works
+#  intent_out_2.f90 # pmk: works
+#  intent_out_5.f90 # pmk: works
+#  interface_assignment_1.f90 # pmk: works
+#  internal_pack_10.f90 # pmk: works
+#  internal_pack_6a.f90 # pmk: works
+#  intrinsic_pack_5.f90 # pmk: works
+#  intrinsic_pack_6.f90 # pmk: works
+#  move_alloc_10.f90 # pmk: works
+#  move_alloc_6.f90 # pmk: works
+#  namelist_13.f90 # pmk: works
+#  namelist_15.f90 # pmk: works
+#  namelist_40.f90 # pmk: fixed
+#  namelist_47.f90 # pmk: fixed
+#  namelist_64.f90 # pmk: works
+#  namelist_78.f90 # pmk: works
+#  namelist_96.f90 # pmk: works
+#  no-automatic.f90 # pmk: works
+#  optional_assumed_charlen_2.f90 # pmk: works
+#  pointer_array_component_2.f90 # pmk: works
+#  pointer_assign_10.f90 # pmk: works
+#  pointer_assign_11.f90 # pmk: works
+#  pointer_assign_8.f90 # pmk: works
+#  pointer_assign_9.f90 # pmk: works
+#  pointer_init_3.f90 # pmk: works
+#  pr19926.f90 # pmk: works
+#  pr51434.f90 # pmk: works
+  pr68078.f90 # needs to be built with set_vm_limit.c
+  pr69739.f90 # bad test, non-conformant arrays are compared
+#  pr78290.f90 # pmk: works
+#  pr83864.f90 # pmk: works
+#  pr85786.f90 # pmk: works
+#  result_default_init_1.f90 # pmk: works
+#  structure_constructor_5.f03 # pmk: works
+#  submodule_1.f08 # pmk: works
+#  submodule_2.f08 # pmk: works
+#  temporary_3.f90 # pmk: works
+#  transfer_class_2.f90 # pmk: works
+  typebound_call_32.f90 # runtime segfault
+#  typebound_operator_15.f90 # pmk: works
 
   # error: unemittable constant value
-  namelist_utf8.f90
+#  namelist_utf8.f90 # pmk: works
 
   # error: cannot be converted to LLVM IR: missing
   # `LLVMTranslationDialectInterface` registration for dialect for op: func.func
-  leadz_trailz_1.f90
-  leadz_trailz_2.f90
+#  leadz_trailz_1.f90 # pmk: works
+#  leadz_trailz_2.f90 # pmk: works
 
   # error: failed to legalize operation 'math.ctlz' that was explicitly marked
   # illegal
-  leadz_trailz_3.f90
+#  leadz_trailz_3.f90 # pmk: works
 
   # --------------------------------------------------------------------------
   #
@@ -1614,16 +1613,16 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   getenv_1.f90
 
   # error: Cannot use-associate 'x'; it is already declared in this scope
-  iso_fortran_env_3.f90
+#  iso_fortran_env_3.f90 # pmk: works
 
   # error: Must be a constant value
-  matmul_17.f90
-  matmul_8.f03
+#  matmul_17.f90 # pmk: works
+#  matmul_8.f03 # pmk: works
   pr67140.f90
   pr89077.f90
   substr_simplify.f90
   transfer_simplify_12.f90
-  zero_sized_9.f90
+#  zero_sized_9.f90 # pmk: works
 
   # error: COMMON block was not lowered before its usage
   common_18.f90
@@ -1644,20 +1643,20 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   pdt_2.f03
 
   # error: '[SYM]' not found in module 'iso_fortran_env'
-  overload_3.f90
-  pr66311.f90
-  proc_ptr_comp_6.f90
-  proc_ptr_comp_pass_2.f90
+#  overload_3.f90 # pmk: works
+#  pr66311.f90 # pmk: works
+#  proc_ptr_comp_6.f90 # pmk: works
+#  proc_ptr_comp_pass_2.f90 # pmk: works
   quad_2.f90
   quad_3.f90
   team_change_1.f90
   team_end_1.f90
   team_form_1.f90
   team_number_1.f90
-  unlimited_polymorphic_31.f03
+#  unlimited_polymorphic_31.f03 # pmk: works
 
   # error: VOLATILE attribute was already specified
-  volatile10.f90
+#  volatile10.f90 # pmk: works
 
   # error: 'mask=' argument has unacceptable rank 0
   pdt_20.f03
@@ -1667,6 +1666,9 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
 
   # error: In assignment to procedure pointer 'funct', the target is not a
   # procedure or procedure pointer
+  # This is a bad test.  Within the body of a function that doesn't have
+  # a RESULT suffix, the name of the function refers to the function's
+  # result object, and the error is correct.
   proc_ptr_47.f90
 
   # error: '[SYM]' may not be a procedure as it is in a COMMON block
@@ -1687,15 +1689,15 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   real_index_1.f90
 
   # error: error: Invalid CONVERT value
-  record_marker_1.f90
-  record_marker_3.f90
-  unf_io_convert_1.f90
-  unf_io_convert_2.f90
-  unf_io_convert_3.f90
+#  record_marker_1.f90 # pmk: fixed
+  record_marker_3.f90 # needs -frecord-marker=8
+#  unf_io_convert_1.f90 # pmk: fixed
+#  unf_io_convert_2.f90 # pmk: fixed
+#  unf_io_convert_3.f90 # pmk: fixed
 
   # error: Implicit declaration of function has a different result type than in
   # previous declaration
-  recursive_check_14.f90
+#  recursive_check_14.f90 # pmk: works
 
   # error: Result of pure function may not have an impure FINAL subroutine
   finalize_51.f90
@@ -1722,7 +1724,7 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   # For some reason, when building these tests, LLVM-IR is generated instead of
   # of an object file.
   save_6.f90
-  shape_9.f90
+#  shape_9.f90 # pmk: works
 
   # These tests seem to hang at runtime. Not sure if this indicates a problem
   # with flang or with the tests themselves.
@@ -1730,8 +1732,8 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   # FIXME: This should be checked and this comment should either be updated to
   # reflect what the actual problem is with the tests or the tests should be
   # removed from this list.
-  namelist_42.f90
-  namelist_43.f90
+#  namelist_42.f90 # pmk: works
+#  namelist_43.f90 # pmk: works
 
   # --------------------------------------------------------------------------
   #
@@ -1739,15 +1741,15 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   # be because of the use of non-standard syntax, but they will need to be
   # checked to be sure.
   #
-  auto_in_equiv_1.f90
-  auto_in_equiv_2.f90
-  automatic_1.f90
-  dec-comparison-character_1.f90
+  auto_in_equiv_1.f90 # "automatic" attribute
+  auto_in_equiv_2.f90 # "automatic" attribute
+  automatic_1.f90 # "automatic" attribute
+  dec-comparison-character_1.f90 # Hollerith with trailing blanks
   dec-comparison-character_2.f90
-  dec_exp_1.f90
-  dec_format_empty_item_1.f
-  dec_format_empty_item_2.f
-  dec_io_1.f90
+  dec_exp_1.f90 # real literals with no exponent digits (e.g., 8e)
+  dec_format_empty_item_1.f # trailing comma in FORMAT
+  dec_format_empty_item_2.f # trailing comma in FORMAT
+  dec_io_1.f90 # OPEN(SHARE=)
   dec_parameter_1.f
   dec_parameter_2.f90
   dec_static_1.f90
@@ -1762,15 +1764,13 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
 
   # --------------------------------------------------------------------------
   #
-  # These tests are skipped because they cause flang to crash.
-
-  # Assertion `ty.isa<fir::RecordType>()' failed
+  # These tests are skipped because they need to be linked with C code
   c_assoc.f90
   c_f_pointer_complex.f03
   c_f_pointer_logical.f03
   c_f_pointer_shape_tests_2.f03
   c_f_pointer_shape_tests_4.f03
-  deferred_character_8.f90
+#  deferred_character_8.f90 # pmk: works
   equiv_7.f90
   iso_c_binding_rename_1.f03
   test_only_clause.f90
@@ -1804,11 +1804,11 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   f2c_5.f90
   global_vars_f90_init.f90
   lrshift_1.f90
-  matmul_blas_1.f
-  matmul_bounds_14.f
+#  matmul_blas_1.f # pmk: works
+#  matmul_bounds_14.f # pmk: works
   mixed_io_1.f90
   namelist_83.f90
-  pr37287-1.f90
+#  pr37287-1.f90 # pmk: works
   pr77420_3.f90
   pr83149_1.f90
   pr83149_b.f90
@@ -1839,6 +1839,26 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   inline_matmul_15.f90 # incompatible MATMUL argument shapes
   internal_write_1.f90 # internal WRITE array overrun
   large_unit_1.f90 # UNIT number 68719476746 is out of range
+  repeat_1.f90 # REPEAT('a',i) with i==-1
+  write_check.f90 # WRITE(..., advance=str) with str=='NOT'
+  matmul_5.f90 # 2x2 * 3x4
+  matmul_bounds_11.f90 # 2x2 * 3x4
+  matmul_bounds_13.f90 # 3x2 * 4x2
+  matmul_bounds_15.f # 3x2 * 3x3
+  matmul_bounds_16.f # 2x3 * 4x3
+  matmul_bounds_7.f90 # 4x4 * 3x2
+  matmul_bounds_9.f90 # 3x2 * 1x4
+  maxloc_bounds_3.f90 # non-conformant ARRAY and MASK
+  maxloc_bounds_6.f90 # non-conformant ARRAY and MASK
+
+  # need -O0 to avoid "inlining" breakage due to incompatibility
+  # between "inlining" code in lowering and fixed implementation
+  # in runtime re: NaNs in max/min val/loc
+  maxlocval_2.f90
+  maxlocval_4.f90
+  maxloc_2.f90
+  minloc_1.f90
+  minlocval_4.f90
 
   # require further analysis
   Wall.f90 # no warning for missing & on continuation line in char constant
@@ -1851,36 +1871,8 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   do_check_1.f90 # zero-valued DO loop step; needs -fcheck=do
   dollar_edit_descriptor_4.f # TODO: (i3,$) format shouldn't advance record when looping
   list_read_11.f90 # more CR character shenanigans
-  matmul_5.f90
-  matmul_bounds_11.f90
-  matmul_bounds_13.f90
-  matmul_bounds_15.f
-  matmul_bounds_16.f
-  matmul_bounds_7.f90
-  matmul_bounds_9.f90
-  maxloc_2.f90
-  maxloc_bounds_3.f90
-  maxloc_bounds_6.f90
-  maxloc_string_1.f90
-  maxlocval_2.f90
-  maxlocval_4.f90
-  merge_bits_2.F90
-  minloc_1.f90
-  minlocval_1.f90
-  minlocval_4.f90
-  minmaxloc_10.f90
-  minmaxloc_1.f90
-  minmaxloc_3.f90
-  minval_char_1.f90
-  minval_char_3.f90
-  minval_parameter_1.f90
-  missing_optional_dummy_6.f90
-  mod_large_1.f90
-  mod_sign0_1.f90
-  module_nan.f90
-  multiple_allocation_1.f90
-  multiple_allocation_3.f90
-  mvbits_4.f90
+  merge_bits_2.F90 # lowering bug reported
+#  mvbits_4.f90 # pmk: works
   namelist_87.f90
   nan_2.f90 # depend on MIN/MAX(1.,NaN) folding to 1.; f18 & Intel return NaN.
   negative_unit_int8.f # depends on 64-bit unit numbers or something?
@@ -1898,26 +1890,6 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   pr12884.f
   pr17286.f90
   pr17706.f90 # depends on -fno-sign-zero option
-  pr50069_1.f90
-  pr59700.f90
-  pr71523_2.f90
-  pr96436_3.f90
-  pr96436_4.f90
-  pr96436_5.f90
-  promotion_3.f90
-  promotion_4.f90
-  promotion.f90
-  random_3.f90
-  random_5.f90
-  random_init_2.f90
-  read_5.f90
-  read_bang4.f90
-  read_bang.f90
-  read_comma.f
-  read_eof_3.f90
-  read_eof_7.f90
-  read_eof_all.f90
-  read_legacy_comma.f90
   real4-10-real8-10.f90
   real4-10-real8-16.f90
   real4-10-real8-4.f90
@@ -1933,38 +1905,10 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   real8-10.f90
   real8-16.f90
   real8-4.f90
-  real_const_3.f90
-  realloc_on_assign_11.f90
-  recursive_check_7.f90
-  repeat_1.f90
-  reshape_order_1.f90
-  reshape_order_2.f90
-  reshape_order_3.f90
-  reshape_order_4.f90
-  round_3.f08
-  selected_kind_1.f90
-  short_circuiting_3.f90
-  streamio_11.f90
-  streamio_13.f90
-  streamio_17.f90
-  streamio_4.f90
+  short_circuiting_3.f90 # expects short-circuiting with -O3
   system_clock_3.f08
-  unf_io_convert_4.f90
-  unf_read_corrupted_1.f90
-  unf_short_record_1.f90
   unformatted_subrecord_1.f90
-  unpack_bounds_2.f90
-  unpack_bounds_3.f90
-  utf8_1.f03
-  utf8_2.f03
-  widechar_5.f90
-  widechar_8.f90
   widechar_IO_4.f90
-  widechar_intrinsics_4.f90
-  widechar_intrinsics_5.f90
-  widechar_intrinsics_8.f90
-  write_check.f90
-  zero_sized_1.f90
 
   # ---------------------------------------------------------------------------
   #
@@ -2214,6 +2158,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   string_2.f90
   string_3.f90
   string_3_lp64.f90
+  value_5.f90
   warn_conversion.f90
   whole_file_1.f90
   whole_file_2.f90
@@ -2235,7 +2180,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   allocate_alloc_opt_11.f90
   # Same object appears more than once in ALLOCATE
   allocate_error_2.f90
-  allocate_error_4.f90
+#  allocate_error_4.f90 # pmk: works
   # Character length mismatch between definition and external in same file
   auto_char_len_4.f90
   # Non-conformable array operands -- needs symbolic evaluation to see
@@ -2327,38 +2272,26 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   array_constructor_28.f03
   bounds_check_array_ctor_3.f90
   bounds_check_array_ctor_5.f90
-  # ASSOCIATED(p,(t))
-  associated_target_1.f90
-  # BIND(C) dummy argument can't be CONTIGUOUS pointer
-  bind_c_contiguous.f90
-  # C_PTR's component should be private so C_PTR structure constructor doesn't work
-  c_ptr_tests_13.f03
   # C_SIZEOF() argument must be an interoperable type
   c_sizeof_6.f90
-  # Automatic CHARACTER can't be in COMMON
-  common_13.f90
   # External should not have same name as COMMON
   common_15.f90
   # Cray pointee must not be in COMMON or EQUIVALENCE
-  cray_pointers_4.f90
+# cray_pointers_4.f90 # pmk: fixed
   # Not catching lack of label actual argument for alternate return dummy
   do_check_19.f90
   # Not catching use of ENTRY-only dummy argument in a specification expression
   entry_dummy_ref_1.f90
   # Parent component of extended derived type with PRIVATE default must be PRIVATE
   extends_10.f03
-  # Further declarations after an initialization that are incompatible with it
-  initialization_17.f90
   # Old-style initializer on declaration of dummy argument
   oldstyle_2.f90
   # Function result may not be a coarray
   pr104210.f90
   # Should ensure that C_PTR component is private and warn on attempt to PRINT it
   pr32601.f03
-  # ABS(S) after CALL S(1)
-  pr71859.f90
   # PRESENT() argument must be a whole dummy argument name, not subobject
-  present_1.f90
+# present_1.f90 # pmk: fixed
   # integer, parameter :: dp = kind(1.0_dp)
   recursive_parameter_1.f90
   # Statement function cannot be a dummy argument
@@ -2367,8 +2300,6 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   stfunc_3.f90
   # Valid parser failure, could have better error recovery
   use_29.f90
-  # Assumed-length CHARACTER cannot be VALUE
-  value_5.f90
   # No return type mismatch warning
   whole_file_34.f90
   # No interface mismatch warning on call to implicit interface expecting alternate returns
@@ -2516,7 +2447,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   # Can't fold MERGE of derived types
   merge_init_expr_2.f90
   # asin(real(kind=16)) cannot be folded on host
-  quad_1.f90
+#  quad_1.f90 # pmk: works
 
   # Unclear; may be bogus error on actual non-coarray arg to dummy coarray, may be bad test
   coarray_args_2.f90
@@ -2602,6 +2533,13 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   pack_bounds_1.f90
   ptr_func_assign_1.f08
   spread_bounds_1.f90
+  reshape_order_1.f90
+  reshape_order_2.f90
+  reshape_order_3.f90
+  reshape_order_4.f90
+  unpack_bounds_2.f90
+  unpack_bounds_3.f90
+  zero_sized_1.f90
 
   # Bad test, assigning an 11 elements array to a 12 elements array.
   transfer_array_intrinsic_4.f90
@@ -2627,6 +2565,12 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   iostat_4.f90
   namelist_89.f90
   namelist_97.f90
+  pr59700.f90
+  read_bang.f90
+  read_bang4.f90
+  streamio_13.f90
+  streamio_17.f90
+  unf_short_record_1.f90
 
   # Depends on gfortran's exact NAMELIST output spacing and record advances
   dtio_25.f90
@@ -2669,8 +2613,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   read_dir.f90
 
   # Unimplemented extension: \u and \U Unicode escape sequences
-  achar_6.F90
-  widechar_1.f90
+  widechar_1.f90 # now works with -fbackslash
 
   # Unimplemented extension: \b backslash escapes in FORMAT statements
   backslash_3.f
@@ -2706,6 +2649,10 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   fmt_l.f90
   fmt_zero_width.f90
   list_directed_large.f90
+  pr96436_3.f90
+  pr96436_4.f90
+  pr96436_5.f90
+  read_5.f90
 
   # Depends on gfortran padding Hollerith with blanks up to even 32-bit words.
   # gfortran & nvfortran do so; ifort/ifx, NAG, and f18 pad with zeroes; XLF
@@ -2732,6 +2679,8 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   # Depends on gfortran emitting "Infinity" for formatted output;
   # some compilers, including f18, emit "Inf".
   large_real_kind_1.f90
+  real_const_3.f90
+  module_nan.f90
 
   # Require -finit-local-zero or similar.
   dec_init_2.f90 # needs -finit-derived -finit-integer=42 &c.
@@ -2745,7 +2694,40 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   init_flag_6.f90
   init_flag_7.f90
   init_flag_9.f90
+  pr71523_2.f90
 
   # Requires -ffloat-store
   nearest_1.f90
+
+  # Requires -fdefault-real-16 flag
+  promotion_3.f90
+  promotion_4.f90
+
+  # Requires -fcheck=recursion
+  recursive_check_7.f90
+
+  # Assumes that real(8) RANDOM_NUMBER sequence will match real(10)
+  random_3.f90
+
+  # Bad test: calls RANDOM_SEED with two arguments present
+  random_5.f90
+
+  # Highly nonportable test (no two compilers alike)
+  read_eof_all.f90
+
+  # gfortran output is incorrect in three cases, f18 gets them right
+  #  (RU,G10.2)   0.99E-01           expected:    0.10
+  #  (RC,G10.1)    0.9E-01           expected:     0.1
+  #  (RU,G10.3)  0.999E-01           expected:   0.100
+  round_3.f08
+
+  # "Fails" due to f18 supporting REAL(2)
+  selected_kind_1.f90
+
+  # INQUIRE(CONVERT=str) returns NATIVE/SWAP rather than LITTLE/BIG_ENDIAN
+  unf_io_convert_4.f90
+
+  # Expects partial read success when reading corrupt sequential variable
+  # unformatted file
+  unf_read_corrupted_1.f90
 )
